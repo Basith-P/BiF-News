@@ -21,6 +21,7 @@ class BifNewsApp extends StatelessWidget {
     return MaterialApp(
       title: 'BiF News',
       theme: themeData,
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: route.controller,
       initialRoute: route.homePage,
     );

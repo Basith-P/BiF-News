@@ -11,11 +11,17 @@ class ListTileText extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          trailing: Icon(icon),
+          trailing: Icon(
+            icon,
+            color: Colors.white60,
+          ),
           title: Text(
             title,
             style: Theme.of(context).textTheme.headline6,
           ),
+        ),
+        Divider(
+          color: Colors.grey.withOpacity(0.1),
         ),
       ],
     );

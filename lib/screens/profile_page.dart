@@ -15,12 +15,17 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios_new_rounded),
+        ),
+        backgroundColor: const Color(0xff111214),
         elevation: 0,
-        title: Text(
-          'PORTFOLIO',
+        title: const Text(
+          'PROFILE',
           style: TextStyle(
-            color: Colors.grey[800],
             fontWeight: FontWeight.bold,
             fontSize: 20,
             letterSpacing: 2,
@@ -42,7 +47,7 @@ class ProfilePage extends StatelessWidget {
                     Expanded(
                       child: Text(
                         'Hello,\nmy name',
-                        style: Theme.of(context).textTheme.headline1,
+                        style: Theme.of(context).textTheme.headline3,
                       ),
                     ),
                     Container(
@@ -64,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 Text(
                   'is Basith.\nI\'m a Developer.',
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
                 const SizedBox(height: 20),
                 buildCustomCard(

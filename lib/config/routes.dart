@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '/screens/home_screen.dart';
-import '/screens/profile_screen.dart';
+import '/screens/home_page.dart';
+import '../screens/profile_page.dart';
 
 const String homePage = 'home';
 const String profilePage = 'profile';
@@ -13,6 +13,6 @@ Route<dynamic> controller(RouteSettings settings) {
     case profilePage:
       return MaterialPageRoute(builder: (context) => const ProfilePage());
     default:
-      throw ('This route name does not exist');
+      throw ('This route name does not exists');
   }
 }
