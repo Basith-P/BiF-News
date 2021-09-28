@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/list_tile_text.dart';
 import '/widgets/custom_card.dart';
+import '/widgets/circle_avatar_with_shadow.dart';
+import '../utils/vars.dart';
 
 class ProfilePage extends StatelessWidget {
   static const routName = '/profile';
@@ -23,13 +22,9 @@ class ProfilePage extends StatelessWidget {
         ),
         backgroundColor: const Color(0xff111214),
         elevation: 0,
-        title: const Text(
+        title: Text(
           'PROFILE',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-            letterSpacing: 2,
-          ),
+          style: appBarTextStyle,
         ),
         centerTitle: true,
       ),
@@ -50,18 +45,11 @@ class ProfilePage extends StatelessWidget {
                         style: Theme.of(context).textTheme.headline3,
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(color: Colors.black12, blurRadius: 10),
-                        ],
-                      ),
-                      child: const CircleAvatar(
+                    const Hero(
+                      tag: 'profilePic',
+                      child: CircleAvatarWithShadow(
+                        image: AssetImage('assets/images/1.png'),
                         radius: 70,
-                        backgroundImage: AssetImage('assets/images/1.png'),
                       ),
                     ),
                     const SizedBox(width: 5),

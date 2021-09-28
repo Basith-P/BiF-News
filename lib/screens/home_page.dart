@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '/config/routes.dart' as route;
+import '../utils/vars.dart';
+import '/widgets/circle_avatar_with_shadow.dart';
 
 class HomePage extends StatelessWidget {
   static const routName = '/';
@@ -9,10 +11,42 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, route.profilePage),
-          child: const Text('Profile page'),
+      appBar: AppBar(
+        leading: const Icon(Icons.search_rounded),
+        title: Text(
+          'The BiF News',
+          style: appBarTextStyle,
+        ),
+        actions: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, route.profilePage),
+            child: const Hero(
+              tag: 'profilePic',
+              child: CircleAvatarWithShadow(
+                image: AssetImage('assets/images/1.png'),
+                radius: 15,
+              ),
+            ),
+          ),
+          const SizedBox(width: 10)
+        ],
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    height: 200,
+                    color: Colors.white,
+                  ),
+                  const Text('The most popular news today')
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
