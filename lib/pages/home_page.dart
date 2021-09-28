@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         leading: const Icon(Icons.search_rounded),
         title: Text(
-          'The BiF News',
+          'THE BiF NEWS',
           style: appBarTextStyle,
         ),
         actions: [
