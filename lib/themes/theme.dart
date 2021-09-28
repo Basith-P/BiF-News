@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,6 +19,11 @@ var themeData = ThemeData.dark().copyWith(
         ),
         headline6: GoogleFonts.nunito(
           color: const Color(0xffFEFFFF),
+          fontWeight: FontWeight.bold,
+        ),
+        bodyText2: GoogleFonts.nunito(
+          color: const Color(0xffFEFFFF),
+          fontSize: 18,
         ),
       ),
 );

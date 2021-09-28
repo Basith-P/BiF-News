@@ -67,7 +67,7 @@ class ProfilePage extends StatelessWidget {
                   [
                     Text(
                       'I\'m a developer focused on flutter and a computer science student',
-                      style: Theme.of(context).textTheme.headline6!.copyWith(height: 1.8),
+                      style: Theme.of(context).textTheme.bodyText2!.copyWith(height: 1.8),
                     ),
                   ],
                 ),
