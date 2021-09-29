@@ -20,6 +20,7 @@ var themeData = ThemeData.dark().copyWith(
         headline6: GoogleFonts.nunito(
           color: const Color(0xffFEFFFF),
           fontWeight: FontWeight.bold,
+          fontSize: 18,
         ),
         bodyText2: GoogleFonts.nunito(
           color: const Color(0xffFEFFFF),

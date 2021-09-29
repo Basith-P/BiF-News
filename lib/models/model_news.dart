@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 enum Popularity {
   popular,
   unpopular,
@@ -7,16 +5,16 @@ enum Popularity {
 
 class News {
   final String title;
-  final ImageProvider image;
-  final String desc;
+  final String image;
   final String date;
+  String? desc = 'Not available';
   Popularity? popularity = Popularity.unpopular;
 
   News({
     required this.title,
     required this.image,
-    required this.desc,
     required this.date,
+    this.desc,
     this.popularity,
   });
 }

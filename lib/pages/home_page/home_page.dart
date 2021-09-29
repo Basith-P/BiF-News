@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '/config/routes.dart' as route;
-import '../utils/vars.dart';
+import '/utils/vars.dart';
 import '/widgets/circle_avatar_with_shadow.dart';
-import '/widgets/popular_news_card.dart';
+import '/dummy_data/dummy_data.dart';
+import '/models/model_news.dart';
+import '/pages/home_page/widgets/popular_news_section.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  final List<News> popularNews = dummyNews.toList();
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.search_rounded),
@@ -34,21 +37,10 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 5, top: 0, right: 5, bottom: 10),
-                child: Text(
-                  'Popular stories',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ),
-              PopularNewsCard(screenWidth: screenWidth),
-            ],
-          ),
+        child: Column(
+          children: const [
+            PopularNewsSection(),
+          ],
         ),
       ),
     );
