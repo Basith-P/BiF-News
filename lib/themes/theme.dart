@@ -9,20 +9,23 @@ var themeData = ThemeData.dark().copyWith(
     backgroundColor: Colors.red[900],
   ),
   textTheme: ThemeData.dark().textTheme.copyWith(
-        headline3: GoogleFonts.nunito(
+        headline3: GoogleFonts.lato(
           color: const Color(0xffFEFFFF),
           fontWeight: FontWeight.bold,
           height: 1.4,
         ),
-        headline5: GoogleFonts.nunito(
+        headline5: GoogleFonts.lato(
           color: const Color(0xffFEFFFF),
         ),
-        headline6: GoogleFonts.nunito(
+        headline6: GoogleFonts.lato(
           color: const Color(0xffFEFFFF),
           fontWeight: FontWeight.bold,
           fontSize: 18,
         ),
-        bodyText2: GoogleFonts.nunito(
+        bodyText1: GoogleFonts.lato(
+          color: Colors.grey,
+        ),
+        bodyText2: GoogleFonts.lato(
           color: const Color(0xffFEFFFF),
           fontSize: 18,
         ),
