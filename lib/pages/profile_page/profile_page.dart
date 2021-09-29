@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/list_tile_text.dart';
-import '/widgets/custom_card.dart';
+import 'widgets/custom_card.dart';
 import '/widgets/circle_avatar_with_shadow.dart';
-import '../../utils/vars.dart';
+import '/utils/vars.dart';
 
 class ProfilePage extends StatelessWidget {
   static const routName = '/profile';
@@ -20,7 +20,6 @@ class ProfilePage extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
         ),
-        backgroundColor: const Color(0xff111214),
         elevation: 0,
         title: Text(
           'PROFILE',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '/dummy_data/dummy_data.dart';
-import '/widgets/popular_news_card.dart';
+import 'popular_news_card.dart';
 
 class PopularNewsSection extends StatelessWidget {
   const PopularNewsSection({

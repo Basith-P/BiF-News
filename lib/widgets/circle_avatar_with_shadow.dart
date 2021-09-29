@@ -15,10 +15,10 @@ class CircleAvatarWithShadow extends StatelessWidget {
         color: Colors.white,
         shape: BoxShape.circle,
         boxShadow: [
-          BoxShadow(
-            color: Colors.black,
-            blurRadius: 10,
-          ),
+          // BoxShadow(
+          //   color: Colors.black,
+          //   blurRadius: 10,
+          // ),
         ],
       ),
       child: CircleAvatar(

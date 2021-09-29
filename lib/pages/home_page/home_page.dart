@@ -38,8 +38,58 @@ class HomePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Column(
-          children: const [
-            PopularNewsSection(),
+          children: [
+            const PopularNewsSection(),
+            Padding(
+              padding: const EdgeInsets.all(20).copyWith(bottom: 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'All stories',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                  SizedBox(
+                    // width: 130,
+                    height: 100,
+                    child: Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        children: [
+                          const SizedBox(
+                            width: 130,
+                            child: Image(
+                              image: AssetImage('assets/images/1.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Title goes here',
+                                  style: Theme.of(context).textTheme.headline6,
+                                ),
+                                Text(
+                                  '21-06-21',
+                                  style: Theme.of(context).textTheme.bodyText1,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

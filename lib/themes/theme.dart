@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 var themeData = ThemeData.dark().copyWith(
   scaffoldBackgroundColor: const Color(0xff111214),
-  appBarTheme: const AppBarTheme(
+  appBarTheme: AppBarTheme(
     centerTitle: true,
-    backgroundColor: Color(0xff111214),
+    backgroundColor: Colors.red[900],
   ),
   textTheme: ThemeData.dark().textTheme.copyWith(
         headline3: GoogleFonts.nunito(
