@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../pages/home_page/home_page.dart';
-import '../pages/profile_page.dart';
+import '../pages/profile_page/profile_page.dart';
 
 const String homePage = 'home';
 const String profilePage = 'profile';
