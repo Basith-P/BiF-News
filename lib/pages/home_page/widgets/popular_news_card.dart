@@ -21,10 +21,10 @@ class PopularNewsCard extends StatelessWidget {
           image: NetworkImage(image),
           fit: BoxFit.cover,
         ),
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(15),
         child: Stack(
           alignment: AlignmentDirectional.bottomStart,
           children: [

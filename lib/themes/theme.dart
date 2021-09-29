@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 var themeData = ThemeData.dark().copyWith(
@@ -16,9 +17,10 @@ var themeData = ThemeData.dark().copyWith(
         ),
         headline5: GoogleFonts.lato(
           color: const Color(0xffFEFFFF),
+          fontWeight: FontWeight.bold,
         ),
         headline6: GoogleFonts.lato(
-          color: const Color(0xffFEFFFF),
+          color: Colors.grey[300],
           fontWeight: FontWeight.bold,
           fontSize: 18,
         ),

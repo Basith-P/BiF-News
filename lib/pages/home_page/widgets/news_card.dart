@@ -21,7 +21,7 @@ class NewsCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 15),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(15),
           color: const Color(0xff1F2022),
         ),
         clipBehavior: Clip.antiAlias,

@@ -6,7 +6,7 @@ import '/widgets/circle_avatar_with_shadow.dart';
 import '/dummy_data/dummy_data.dart';
 import '/models/model_news.dart';
 import '/pages/home_page/widgets/popular_news_section.dart';
-import 'widgets/news_card.dart';
+import 'widgets/all_news_section.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -41,41 +41,15 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: SafeArea(
-        child: Column(
-          children: [
-            const PopularNewsSection(),
-            Padding(
-              padding: const EdgeInsets.all(20).copyWith(bottom: 0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'All stories',
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: mdQry.size.height -
-                        appBar.preferredSize.height -
-                        mdQry.padding.vertical -
-                        308,
-                    child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return NewsCard(
-                          title: dummyNews[index].title,
-                          imageUrl: dummyNews[index].image,
-                          date: dummyNews[index].date,
-                          screenWidth: mdQry.size.width,
-                        );
-                      },
-                      itemCount: dummyNews.length,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              PopularNewsSection(),
+              AllNewsSection(mdQry: mdQry),
+            ],
+          ),
         ),
       ),
     );
