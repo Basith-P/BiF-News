@@ -18,6 +18,7 @@ class NewsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
+      width: screenWidth,
       margin: const EdgeInsets.only(bottom: 15),
       child: Container(
         decoration: BoxDecoration(

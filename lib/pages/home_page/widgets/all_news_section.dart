@@ -23,19 +23,21 @@ class AllNewsSection extends StatelessWidget {
             style: Theme.of(context).textTheme.headline5,
           ),
           const SizedBox(height: 10),
-          ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) {
-              return NewsCard(
-                title: dummyNews[index].title,
-                imageUrl: dummyNews[index].image,
-                date: dummyNews[index].date,
-                screenWidth: mdQry.size.width,
-              );
-            },
-            itemCount: dummyNews.length,
-            shrinkWrap: true,
-          ),
+          FutureBuilder(builder: (context, snapshot) {
+            return ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return NewsCard(
+                  title: dummyNews[index].title,
+                  imageUrl: dummyNews[index].image,
+                  date: dummyNews[index].date,
+                  screenWidth: mdQry.size.width,
+                );
+              },
+              itemCount: dummyNews.length,
+              shrinkWrap: true,
+            );
+          }),
         ],
       ),
     );
