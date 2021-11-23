@@ -1,16 +1,26 @@
-import 'package:bif_news_app/models/model_news.dart';
 import 'package:flutter/material.dart';
 
-import '/dummy_data/dummy_data.dart';
-import 'popular_news_card.dart';
+import 'package:bif_news_app/pages/home_page/widgets/popular_news_card.dart';
+import 'package:bif_news_app/models/modal_article.dart';
+import 'package:bif_news_app/api/news.dart' as news;
 
-class PopularNewsSection extends StatelessWidget {
-  PopularNewsSection({
+class PopularNewsSection extends StatefulWidget {
+  const PopularNewsSection({
     Key? key,
   }) : super(key: key);
 
-  final _popularNews =
-      dummyNews.where((element) => element.popularity == Popularity.popular).toList();
+  @override
+  State<PopularNewsSection> createState() => _PopularNewsSectionState();
+}
+
+class _PopularNewsSectionState extends State<PopularNewsSection> {
+  late Future<List<Article>> _popularNews;
+
+  @override
+  void initState() {
+    super.initState();
+    _popularNews = news.News().getNews();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +36,30 @@ class PopularNewsSection extends StatelessWidget {
         ),
         SizedBox(
           height: 200,
-          child: ListView.builder(
-            padding: const EdgeInsets.only(left: 20, bottom: 20),
-            physics: const BouncingScrollPhysics(),
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return PopularNewsCard(
-                title: _popularNews[index].title,
-                image: _popularNews[index].image,
-              );
+          child: FutureBuilder<List<Article>>(
+            future: _popularNews,
+            builder: (context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                return ListView.builder(
+                  padding: const EdgeInsets.only(left: 20, bottom: 20),
+                  physics: const BouncingScrollPhysics(),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index) {
+                    var data = snapshot.data![index];
+                    return PopularNewsCard(
+                      title: data.title,
+                      image: data.image,
+                    );
+                  },
+                );
+              } else if (snapshot.hasError) {
+                return Text("${snapshot.error}");
+              } else {
+                return const CircularProgressIndicator();
+              }
             },
-            itemCount: _popularNews.length,
           ),
         ),
       ],

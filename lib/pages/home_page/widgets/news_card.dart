@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
 
-class NewsCard extends StatelessWidget {
+class NewsCard extends StatefulWidget {
   const NewsCard({
     Key? key,
     required this.title,
-    required this.imageUrl,
-    required this.date,
     required this.screenWidth,
+    required this.description,
+    required this.url,
+    required this.urlToImage,
   }) : super(key: key);
 
   final String title;
-  final String imageUrl;
-  final String date;
+  final String description;
+  final String url;
+  final String urlToImage;
   final double screenWidth;
 
+  @override
+  State<NewsCard> createState() => _NewsCardState();
+}
+
+class _NewsCardState extends State<NewsCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      width: screenWidth,
+      width: widget.screenWidth,
       margin: const EdgeInsets.only(bottom: 15),
       child: Container(
         decoration: BoxDecoration(
@@ -32,7 +39,7 @@ class NewsCard extends StatelessWidget {
               width: 130,
               height: 100,
               child: Image(
-                image: NetworkImage(imageUrl),
+                image: NetworkImage(widget.urlToImage),
                 fit: BoxFit.cover,
               ),
             ),
@@ -43,18 +50,14 @@ class NewsCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: screenWidth - 194,
+                    width: widget.screenWidth - 194,
                     child: Text(
-                      title,
+                      widget.title,
                       style: Theme.of(context).textTheme.headline6,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       softWrap: true,
                     ),
-                  ),
-                  Text(
-                    date,
-                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ],
               ),

@@ -46,7 +46,6 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 10),
-              PopularNewsSection(),
               AllNewsSection(mdQry: mdQry),
             ],
           ),
